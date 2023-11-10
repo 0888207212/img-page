@@ -41,3 +41,15 @@ imgBx.forEach((popup) =>
     popup.classList.toggle("active");
   })
 );
+
+let text = document.querySelector(".section-1_title");
+console.log(111, text.innerHTML);
+text.innerHTML = text.innerText
+  .split("")
+  .map(
+    (letters, i) =>
+      `<span style="transition-delay:${i * 40}ms; filter:hue-rotate(${
+        i * 30
+      }deg)">${letters}</span>`
+  )
+  .join("");
