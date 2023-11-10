@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Poppins:ital,wght@0,300;1,100;1,200&family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Open+Sans:ital@0;1&family=Poppins:ital,wght@0,300;1,100;1,200&family=Roboto:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* snow effect */
+.snow-wrap {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.snow,
+.snow::after,
+.snow::before {
+  content: "";
+  position: absolute;
+  top: -650px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+    radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 250px, #fff, transparent),
+    radial-gradient(4px 4px at 400px 350px, #fff, transparent),
+    radial-gradient(6px 6px at 500px 100px, #fff, transparent),
+    radial-gradient(3px 3px at 50px 200px, #fff, transparent),
+    radial-gradient(4px 4px at 150px 300px, #fff, transparent),
+    radial-gradient(6px 6px at 250px 400px, #fff, transparent),
+    radial-gradient(3px 3px at 350px 500px, #fff, transparent);
+  background-size: 650px 650px;
+  animation: snowEffect 6s linear;
+  animation-iteration-count: infinite;
+}
+
+.snow::after {
+  margin-left: -250px;
+  opacity: 0.5s;
+  filter: blur(2px);
+  animation-direction: reverse;
+  animation-duration: 9s;
+}
+
+.snow::before {
+  margin-left: -350px;
+  opacity: 0.7s;
+  filter: blur(1px);
+  animation-direction: reverse;
+  animation-duration: 12s;
+}
+
+@keyframes snowEffect {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(650px);
+  }
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* font-size: 6em;
+  font-weight: 800;
+  color: rgba(225, 225, 225, 0.1); */
+  background: #333;
+  /* text-transform: uppercase; */
+  padding: 30px 100px;
+}
+
+section:nth-child(even) {
+  background: #444;
+}
+
+header {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: 400px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5));
+}
+
+header nav {
+  display: flex;
+  width: 350px;
+}
+
+header nav a {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 60px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+header nav a .icon {
+  position: absolute;
+  display: block;
+  line-height: 65px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: #666;
+}
+
+header nav a .active .icon {
+  transform: translateY(-32px);
+  color: var(--clr);
+}
+
+header nav a .text {
+  position: absolute;
+  color: #fff;
+  padding: 2px 7px;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  transform: translateY(15px);
+  opacity: 0;
+  border-radius: 10px;
+}
+
+header nav a.active .text {
+  transform: translateY(-4px);
+  background: var(--clr);
+  opacity: 1;
+}
+
+header nav a.active .icon {
+  transform: translateY(-35px);
+  color: var(--clr);
+  opacity: 1;
+}
+
+.indicator {
+  position: absolute;
+  top: -35px;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.indicator::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -28px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 15px 18px #fff;
+}
+
+.indicator::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: -28px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: -15px 18px #fff;
+}
+
+header nav a:nth-child(1).active ~ .indicator {
+  transform: translateX(calc(70px * 0));
+}
+header nav a:nth-child(2).active ~ .indicator {
+  transform: translateX(calc(70px * 1));
+}
+header nav a:nth-child(3).active ~ .indicator {
+  transform: translateX(calc(70px * 2));
+}
+header nav a:nth-child(4).active ~ .indicator {
+  transform: translateX(calc(70px * 3));
+}
+header nav a:nth-child(5).active ~ .indicator {
+  transform: translateX(calc(70px * 4));
+}
+
+/* section-1 */
+
+.section-1 {
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #333;
+  opacity: 0.8;
+  position: relative;
+}
+
+.section-1_title {
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
+  color: #fff;
+}
+
+.section-1_checkbox {
+  position: absolute;
+  top: 45px;
+  right: 100px;
+  width: 60px;
+  height: 30px;
+  z-index: 99;
+}
+
+.section-1_checkbox input {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  cursor: pointer;
+}
+
+.section-1_checkbox span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #686767;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.section-1_checkbox input:checked ~ span {
+  background: rgb(230, 158, 230);
+}
+
+.section-1_checkbox span i {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.section-1_checkbox input:checked ~ span i {
+  left: 31px;
+}
+
+.section-1_checkbox span i::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  width: 4px;
+  height: 4px;
+  background: #686767;
+  border-radius: 50%;
+  box-shadow: 12px 0 0 #686767;
+  transition: 0.5s;
+}
+
+.section-1_checkbox input:checked ~ span i::before {
+  background: rgb(230, 158, 230);
+  box-shadow: 12px 0 0 rgb(230, 158, 230);
+}
+
+.section-1_checkbox span i::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+  width: 9px;
+  height: 4px;
+  border-radius: 2px;
+  background: #686767;
+}
+
+.section-1_checkbox input:checked ~ span i::after {
+  bottom: 5px;
+  height: 6px;
+  border-radius: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: rgb(230, 158, 230);
+}
+
+section .container {
+  position: absolute;
+  display: flex;
+  height: calc(100% - 210px);
+  width: calc(100% - 200px);
+  z-index: 100;
+  margin-top: 20px;
+}
+section .container .box {
+  padding: 0 10px;
+  position: relative;
+  width: 25%;
+  height: 100%;
+  background: #333;
+  overflow: hidden;
+  border-right: 20px solid #333;
+}
+section .container .box:last-child {
+  border-right: none;
+}
+section .container .box .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  transition: 0.5s;
+  /* opacity: 0; */
+  animation: slideRight 0.5s ease-in-out forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+section .container .box .imgBx.active {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: calc(100% - 200px);
+  height: calc(100% - 200px);
+  z-index: 1000;
+  filter: grayscale(0);
+  opacity: 1;
+}
+section .container .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+section .container .box .imgBx:hover img {
+  transform: scale(1.2);
+}
+section .container .box .imgBx.active:hover img {
+  transform: scale(1.12);
+  height: 90%;
+  margin-top: 32px;
+}

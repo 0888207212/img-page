@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Page Title</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+	<link rel="stylesheet" type='text/css' media='screen' href="reponsive_section1.css">
+	<link rel="stylesheet" type='text/css' media='screen' href="section_2.css">
+</head>
+
+<body>
+	<!-- snow effect -->
+	<div class="snow-wrap">
+		<div class="snow"></div>
+	</div>
+
+	<!-- toggle snow effect -->
+	<label for="" class="section-1_checkbox">
+		<input type="checkbox" class="checkbox_snow">
+		<span>
+			<i></i>
+		</span>
+	</label>
+
+	<!-- header-bottom -->
+	<header>
+		<nav>
+			<a href="#home" class="active" style="--clr: #f44336">
+				<span class="icon">
+					<ion-icon name="home-outline"></ion-icon>
+				</span>
+				<span class="text">Home</span>
+			</a>
+			<a href="#profile" style="--clr: #ffa117">
+				<span class="icon">
+					<ion-icon name="person-outline"></ion-icon>
+				</span>
+				<span class="text">Profile</span>
+			</a>
+			<a href="#messages" style="--clr: #0fc70f">
+				<span class="icon">
+					<ion-icon name="chatbubbles-outline"></ion-icon>
+				</span>
+				<span class="text">Messages</span>
+			</a>
+			<a href="#photos" style="--clr: #2196f3">
+				<span class="icon">
+					<ion-icon name="camera-outline"></ion-icon>
+				</span>
+				<span class="text">Photos</span>
+			</a>
+			<a href="#settings" style="--clr: #b145e9">
+				<span class="icon">
+					<ion-icon name="settings-outline"></ion-icon>
+				</span>
+				<span class="text">Settings</span>
+			</a>
+
+			<div class="indicator"></div>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- section -->
+	<section class="section" id="home">
+		<div class="section-1">
+			<p class="section-1_title">heros & champion</p>
+		</div>
+		<div class="container">
+			<div class="box" style="--i:3;">
+				<div class="imgBx">
+					<img src="img/img1.jpg">
+				</div>
+			</div>
+			<div class="box" style="--i:4;">
+				<div class="imgBx">
+					<img src="img/img2.jpg">
+				</div>
+			</div>
+			<div class="box" style="--i:5;">
+				<div class="imgBx">
+					<img src="img/img3.jpg">
+				</div>
+			</div>
+			<div class="box" style="--i:6;">
+				<div class="imgBx">
+					<img src="img/img4.jpg">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" id="profile">
+		<div class="section-2_container">
+			<div class="card" style="--clr: #009688;">
+				<div class="img-bx">
+					<img
+						src="https://upload-os-bbs.hoyolab.com/upload/2022/06/28/21867498/56518791938a22bc16477798e1cffdad_3961813626186687645.png?x-oss-process=image%2Fresize%2Cs_1000%2Fauto-orient%2C0%2Finterlace%2C1%2Fformat%2Cwebp%2Fquality%2Cq_80"
+						alt="">
+				</div>
+				<div class="content">
+					<h2>Ganyu</h2>
+					<p>Nuxt uses Vue.js and adds features such as component auto-imports, file-based routing and composables for a
+						SSR-friendly usage.</p>
+					<a href="#">Read more</a>
+				</div>
+			</div>
+			<div class="card" style="--clr: #ff3e7f;">
+				<div class="img-bx">
+					<img
+						src="https://64.media.tumblr.com/7386a64c3d2fdd4ed50e1176267641d3/da53514028719ea1-b7/s540x810/3686a9d36971c28d6776299afd03da179369eeef.jpg"
+						alt="">
+				</div>
+				<div class="content">
+					<h2>Xiao</h2>
+					<p>Nuxt uses Vue.js and adds features such as component auto-imports, file-based routing and composables for a
+						SSR-friendly usage.</p>
+					<a href="#">Read more</a>
+				</div>
+			</div>
+			<div class="card" style="--clr: #03a9f4;">
+				<div class="img-bx">
+					<img
+						src="https://upload-os-bbs.hoyolab.com/upload/2022/06/28/21867498/052fc10dddf5fb2cbecb9abfe8d4729c_778841745795574540.png?x-oss-process=image%2Fresize%2Cs_1000%2Fauto-orient%2C0%2Finterlace%2C1%2Fformat%2Cwebp%2Fquality%2Cq_80"
+						alt="">
+				</div>
+				<div class="content">
+					<h2>Kokomi</h2>
+					<p>Nuxt uses Vue.js and adds features such as component auto-imports, file-based routing and composables for a
+						SSR-friendly usage.</p>
+					<a href="#">Read more</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section" id="messages">Messages</section>
+	<section class="section" id="photos">Photos</section>
+	<section class="section" id="settings">Settings</section>
+
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<script src="index.js"></script>
+
+</body>
+
+</html>
